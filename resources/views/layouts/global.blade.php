@@ -38,11 +38,11 @@
 <body>
 
     <nav class="navbar navbar-expand p-0">
-     <a class="navbar-brand text-center col-xs-12 col-md-3 col-lg-2 mr-0" href="{{route('home')}}"> Larashop </a>
+     <a class="navbar-brand text-center col-xs-12 col-md-3 col-lg-2 mr-0" href="index.html"> Larashop </a>
       <button class="btn btn-link d-block d-md-none" data-toggle="collapse" data-target="#sidebar-nav" role="button" >
         <span class="oi oi-menu"></span>
       </button>
-
+      
       <input class="border-dark bg-primary-darkest form-control d-none d-md-block w-50 ml-3 mr-2" type="text" placeholder="Search" aria-label="Search">
       <div class="dropdown d-none d-md-block">
         @if(\Auth::user())
@@ -71,6 +71,7 @@
             <ul class="polished-sidebar-menu ml-0 pt-4 p-0 d-md-block">
               <input class="border-dark form-control d-block d-md-none mb-4" type="text" placeholder="Search" aria-label="Search" />
               <li><a href="/home"><span class="oi oi-home"></span> Home</a></li>
+              <li><a href="{{route('users.index')}}"><span class="oi oi-people"></span> Manage users</a></li>
 
               <div class="d-block d-md-none">
                   <div class="dropdown-divider"></div>
@@ -92,13 +93,14 @@
             <div class="row ">
               <div class="col-md-12 pl-3 pt-2">
                   <div class="pl-3">
-                      <h3>@yield("pageTitle")</h3>
-                      <br/>  
+                    <h3>@yield("title")</h3>
+                    <br>
                   </div>
               </div>
             </div>
 
             @yield("content")
+
 
         </div>
       </div>
@@ -110,5 +112,8 @@
   crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
+
+  @yield('footer-scripts')
 </body>
+
 </html>
