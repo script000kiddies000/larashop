@@ -16,6 +16,7 @@ class UserController extends Controller
         $users = \App\Models\User::paginate(10);
 
         $filterKeyword = $request->get('keyword');
+        $status = $request->get('status');
 
         if($filterKeyword){
             if($status){
