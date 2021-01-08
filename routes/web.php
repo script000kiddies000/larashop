@@ -29,6 +29,10 @@ Route::match(["GET", "POST"], "/register", function(){
     return redirect("/login");
 });
 
+// Route::middleware('auth')->group(static function () {
+//  //isi list route
+// });
+
 Route::resource("users", UserController::class);
 
 Route::get('/ajax/categories/search', [CategoryController::class, 'ajaxSearch']);
